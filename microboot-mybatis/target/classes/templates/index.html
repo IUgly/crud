@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SpringBoot模版渲染</title>
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+    <link rel="icon" type="image/x-icon" href="/images/L.png"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<form th:action="@{/student}" method="get" enctype="multipart/form-data">
+    查询学生名单：
+    <input type="submit" value="查询"/><br/>
+</form>
+<form th:action="@{/teacher}" method="get" enctype="multipart/form-data">
+    查询教师名单：<input type="submit" value="查询"/><br/>
+</form>
+<form th:action="@{/course}" method="post" enctype="multipart/form-data">
+    输入学生姓名查选课：
+    学生姓名<input type="text" name="name"/><br/>
+    <input type="submit" value="提交"/>
+</form>
+<form th:action="@{/add}" method="post" enctype="multipart/form-data">
+    输入课程名和学生id和教师id，添加课程：
+    课程名<input type="text" name="name"/><br/>
+    学生id<input type="text" name="sid"/><br/>
+    教师id<input type="text" name="tid"/><br/>
+    <input type="submit" value="提交"/><br/>
+</form>
+<form th:action="@{/add}" method="post" enctype="multipart/form-data">
+    输入课程id和学生id，删除课程：
+    课程id<input type="text" name="tid"/><br/>
+    学生id<input type="text" name="sid"/><br/>
+    <input type="submit" value="提交"/><br/>
+</form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="team.redrock.microboot.dao.ICourseDAO">
+    <select id="findCourseBySID" resultType="Course">
+        SELECT * FROM course WHERE sid = (#{sid});
+    </select>
+    <insert id="addCourseBySID" parameterType="Course">
+        INSERT INTO course(name,sid,tid) VALUES (#{name}, #{sid}, #{tid}) ;
+    </insert>
+    <delete id="deleteCourseBySID" parameterType="Course">
+        DELETE FROM Course WHERE cid = (#{cid}) AND sid = (#{sid})
+    </delete>
+
+</mapper>
